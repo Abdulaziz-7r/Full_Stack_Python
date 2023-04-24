@@ -1,3 +1,6 @@
+#importing modules
+from tkinter import messagebox as mb
+
 #directory that has all telephone numbers and their owners
 telephone_directory =  {
 '1111111111': 'Amal',
@@ -19,5 +22,17 @@ def find_owner(phone_number, telephone_directory):
     else:
         print('This is invalid number')
 
-#asking the user to enter the telephone number
-find_owner(input('Enter telephone number to know the owner: '), telephone_directory)
+def messagebox(continueRun):
+    res=mb.askquestion('Search Again', 'Do you want to search again?')
+    if res == 'yes' :
+        return True
+    else:
+        mb.showinfo('Close', 'The app will be closed')
+        return False 
+
+
+continueRun = True 
+while(continueRun):
+    #asking the user to enter the telephone number
+    find_owner(input('Enter telephone number to know the owner: '), telephone_directory)
+    continueRun = messagebox(continueRun)

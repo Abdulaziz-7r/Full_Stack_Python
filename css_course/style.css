@@ -1,0 +1,105 @@
+/* testing comment*/
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background-color: aqua;
+    background-image: url('resources/background1.jpg');
+    background-size: cover;
+    background-repeat: repeat-x;
+    background-position: center;
+}
+
+nav{
+    background-color: rgb(0, 102, 102);
+    color: white;
+    position: sticky;
+    top: 0px;
+    padding: 20px; 
+}
+.navItems{
+    list-style: none;
+    display: flex;
+}
+
+li > a{
+    color: black;
+    margin: 5px;
+}
+
+h1{
+    padding: 5px;
+    margin: 5px;
+    border-style: solid;
+    border-width: thick;
+    border-color: rgb(252, 145, 163);
+    background-color: rgb(66, 236, 180);
+    border-radius: 50px;
+    color: black;
+    text-align: center;
+    font-family: cursive, fantasy , Arial , 'Times New Roman', serif;
+}
+
+p{
+    background-color: pink;
+    width: 500px;
+    border: 5px solid rgb(66, 236, 180);
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+    font-family: cursive, fantasy , Arial , 'Times New Roman', serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+a{
+    color: darkgreen;
+}
+a:hover{
+    color: red;
+}
+
+div{
+    background-color:  rgb(66, 236, 180);
+    height: 300px;
+    width: 50%;
+}
+
+.box{
+    margin-top: 5px;
+    height: 300px;
+    width: 300px;
+    border: 5px solid black;
+    position: relative;
+}
+.box1, .box2, .box3{
+    height: 150px;
+    width: 150px;
+}
+.box1{
+    background-color: pink;
+    position: relative;
+    left: 75px;
+    top: 75px;
+}
+.box2{
+    background-color: rgb(228, 126, 67);
+    position: absolute;
+    right: 0px;
+}
+.box3{
+    background-color: rgb(155, 11, 238);
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+}
+
+/*
+Box Model:
+    1- content
+    2- padding
+    3- border
+    4- margin
+*/
