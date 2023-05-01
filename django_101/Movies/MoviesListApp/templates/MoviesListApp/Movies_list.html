@@ -1,25 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies List</title>
-</head>
-<body>
-    <h1>Movies List Application</h1>
-    <hr>
-    <ul>
-        {% for item in Movies_list %}
-            <li>
-                <span>Movie name: </span> <span>{{item.Movie.name }}</span>
-            </li>
+{% extends 'base.html' %}
+{% block content %}
+<ul class = "list-group">
+    {% for item in Movies_list %}
+        <li class = "list-group-item my-2">
+            <span class ="text-info">Movie name: </span> <span>{{item.Movie.name }}</span>
             <br>
-            <li>
-                <span>Movie release date: </span> <span>{{item.Movie.date }}</span>
-            </li>
-        {% endfor %}
-    </ul>
-
-</body>
-</html>
+            <span class ="text-info">Movie release date: </span> <span>{{item.Movie.date }}</span>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock content %}
