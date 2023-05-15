@@ -6,6 +6,17 @@
             <span class ="text-info">Movie name: </span> <span>{{item.Movie.name }}</span>
             <br>
             <span class ="text-info">Movie release date: </span> <span>{{item.Movie.date }}</span>
+            <br>
+            <span class ="text-info">Publisher: </span> <span>{{ item.Movie.publisher }}</span>
+            <br>
+            <span class ="text-info">Rating: </span> <span class = "badge rounded-pill text-bg-primary">{{ item.movie_rating }}</span>
+            <br>
+            <span class ="text-info">Number of reviews: </span> <span>{{ item.num_reviews }}</span>
+            <br>
+            {% if item.movie_rating is null %}
+            <span class= "text-secondary"> Provide a rating and write the first review for the movie</span>
+            <br>
+            {% endif %}
         </li>
     {% endfor %}
 </ul>

@@ -6,6 +6,9 @@ class Publisher(models.Model):
     website = models.URLField(help_text="publisher's website")
     email = models.EmailField(help_text="publisher's email")
 
+    def __str__(self):
+        return self.name
+
 class Movie_info(models.Model):
     name = models.CharField(max_length=100, help_text= 'Name of movie')
     date = models.DateField(verbose_name='Movie released date')
