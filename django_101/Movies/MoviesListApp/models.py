@@ -34,9 +34,15 @@ class MovieContributor(models.Model):
     contributor = models.ForeignKey(Contributor, on_delete=models.CASCADE)
     role = models.CharField(verbose_name= "contributor's role in the movie", choices= ContributionRole.choices, max_length=20)
 
+    def __str__(self):
+        return self.contributor
+    
 class Review(models.Model):
     content = models.TextField(help_text="review text")
     rating = models.IntegerField(help_text="rating that given by reviewer")
     date_created = models.DateTimeField(auto_now_add=True, help_text="date and time of the review")
     creator = models.ForeignKey(auth.get_user_model(), on_delete=models.CASCADE)
     movie = models.ForeignKey(Movie_info, on_delete=models.CASCADE, help_text="the movie that this review is for")
+
+    def __str__(self):
+        return self.content
