@@ -5,6 +5,7 @@ class Seller(models.Model):
     phone = models.CharField(help_text='seller contact number', max_length=20)
     email = models.EmailField(help_text='seller contact email', max_length=254)
     profile = models.TextField(blank=True, help_text="seller's profile")
+    photo = models.ImageField(upload_to="seller/photos/")
 
     def __str__(self):
         return self.name
@@ -14,6 +15,7 @@ class Product(models.Model):
     description = models.TextField(blank=True, help_text="product's description")
     price = models.DecimalField(help_text="product's price", max_digits=5, decimal_places=2)
     seller = models.ForeignKey(Seller, on_delete=models.DO_NOTHING)
+    photo = models.ImageField(upload_to="product/photos/")
 
     def __str__(self):
         return self.name
